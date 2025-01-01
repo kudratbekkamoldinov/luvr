@@ -1,16 +1,18 @@
 import express, { urlencoded } from "express";
 import path from "path";
+import router from "./router";
 
-/** ENTRENCE */
+/** 1-ENTRENCE */
 const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-/** SESSIONS */
+/** 2-SESSIONS */
 
-/** VIEWS */
+/** 3-VIEWS */
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-/** ROUTERS */
 
+/** 4-ROUTERS */
+app.use("/", router);  //MiddleWare design pattern
 export default app;
