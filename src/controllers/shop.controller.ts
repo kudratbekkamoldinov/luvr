@@ -1,6 +1,6 @@
 import {T} from "../libs/types/common";
 import express, {Request, Response} from "express";
-
+import MemberService from "../models/Member.service"
 
 const shopController: T  = {};
 shopController.goHome = (req: Request, res: Response) => {
