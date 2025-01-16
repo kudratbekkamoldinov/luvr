@@ -25,7 +25,7 @@ const memberController: T = {};
 
 memberController.getShop = async (req: Request, res: Response) => {
   try {
-    console.log("getRestaurant");
+    console.log("getShop");
     const result = await memberService.getShop();
 
     res.status(HttpCode.OK).json(result);

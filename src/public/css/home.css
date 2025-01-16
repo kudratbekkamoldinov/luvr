@@ -1,0 +1,62 @@
+.home-container {
+  position: relative;
+  width: auto;
+  height: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/img/car.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* object-fit: contain; */
+}
+
+.home-container a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.home-container .nav-item a {
+  color: #e3c08d;
+}
+
+.home-container .nav-item a.disabled {
+  color: #898071;
+}
+
+.home-container .navigation-menu {
+  position: relative;
+  z-index: 10000;
+  color: #efefee;
+  font-size: 40px;
+  font-family: monospace;
+}
+
+.home-container .animation-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.home-container .animation-frame .wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 1px;
+  height: 100vh;
+}
+
+.home-container .animation-frame .el {
+  position: absolute;
+  opacity: 1;
+  width: 2px;
+  height: 24vh;
+  margin-top: -12vh;
+  transform-origin: 50% 100%;
+  background: white;
+}
