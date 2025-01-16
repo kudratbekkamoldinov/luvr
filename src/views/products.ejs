@@ -29,7 +29,7 @@
       <div class="board">
         <div class="dishes-table">
           <span class="new-dish-txt" style="margin-bottom: 30px">
-            Boxcar Products
+            Luvr Products
           </span>
           <table class="table table-bordered table-hover">
             <thead class="thead-light">
@@ -37,7 +37,6 @@
                 <th scope="col">T/r</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Type</th>
-                <th scope="col">Product Volume</th>
                 <th scope="col">Product Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
@@ -50,8 +49,8 @@
               <td><%= value.productName %></td>
               <td><%= value.productCollection %></td>
               <td>
-                <%= value.productCollection === 'DRINK' ? value.productVolume :
-                value.productSize %>
+                <%= value.productCollection === 'MAKEUP' ?
+                value.productSize  : '' %>
               </td>
               <td><%= value.productPrice %></td>
               <td><%= value.productLeftCount %></td>
@@ -128,34 +127,30 @@
             <div class="half-input">
               <label>Product Type</label>
               <select class="product-collection" name="productCollection">
-                <option value="DISH" selected>Dish</option>
-                <option value="SALAD">Salad</option>
-                <option value="DESSERT">Dessert</option>
-                <option value="DRINK">Drink</option>
-                <option value="OTHER">Other</option>
+                <option value="MAKEUP" selected>Makeup</option>
+                <option value="FASHION">Fashion</option>
+                <option value="CREAM">Cream</option>
+                <option value="ESSENTIAL_OIL">Essential Oil</option>
+                <option value="BODY_LOTION">Body Lotion</option>
+                <option value="OTHER">Others</option>
               </select>
             </div>
 
             <div class="half-input" id="product-collection">
-              <label>Dish Volume</label>
+              <label>Product Size</label>
               <select class="product-size" name="productSize">
-                <option value="SMALL">Small</option>
-                <option value="NORMAL" selected>Normal</option>
-                <option value="LARGE">Large</option>
-                <option value="SET">Set</option>
+                <option value="TWENTY">20ml</option>
+                <option value="THIRTY" >30ml</option>
+                <option value="FORTY">40ml</option>
+                <option value="FIFTY" selected>50ml</option>
+                <option value="HUNDRED">100ml</option>
+                <option value="HUNDRED_FIFTY">150ml</option>
+                <option value="TWO_HUNDRED">200ml</option>
+                <option value="FIVE_HUNDRED">500ml</option>
+
               </select>
             </div>
 
-            <div class="half-input" id="product-volume" style="display: none">
-              <label>Drink Volume</label>
-              <select class="product-volume" name="productVolume">
-                <option value="0.5">0,5 liters</option>
-                <option value="1" selected>1 liters</option>
-                <option value="1.2">1,2 liters</option>
-                <option value="1.5">1,5 liters</option>
-                <option value="2">2 liters</option>
-              </select>
-            </div>
           </div>
           <div class="long-input">
             <label>Product Description</label>

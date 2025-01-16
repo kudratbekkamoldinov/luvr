@@ -10,7 +10,6 @@ import { shapeIntoMongooseObjectId } from "../libs/config";
 import { ProductStatus } from "../libs/enums/product.enum";
 import { T } from "../libs/types/common";
 import { ObjectId } from "mongoose";
-import restaurantController from "../controllers/restaurant.controller";
 import ViewService from "./View.service";
 import { ViewInput } from "../libs/types/view";
 import { ViewGroup } from "../libs/enums/view.enum";
@@ -98,7 +97,6 @@ class ProductService {
             { new: true }
           )
           .exec();
-        
       }
       console.log("result", result);
     }
