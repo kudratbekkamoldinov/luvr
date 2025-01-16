@@ -12,7 +12,7 @@ const shopController: T = {};
 shopController.goHome = (req: Request, res: Response) => {
   try {
     console.log("goHome");
-    res.render("home"); // send | render | redirect | json
+    res.render("home");
     console.log("afterHome");
   } catch (err) {
     console.log("Error, goHome:", err);
@@ -40,10 +40,7 @@ shopController.getLogin = (req: Request, res: Response) => {
   }
 };
 
-shopController.processSignup = async (
-  req: AdminRequest,
-  res: Response
-) => {
+shopController.processSignup = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processSignup");
     console.log("req.body:", req.body);
@@ -71,10 +68,7 @@ shopController.processSignup = async (
   }
 };
 
-shopController.processLogin = async (
-  req: AdminRequest,
-  res: Response
-) => {
+shopController.processLogin = async (req: AdminRequest, res: Response) => {
   try {
     console.log("processLogin");
     console.log("req.body:", req.body);
@@ -114,7 +108,7 @@ shopController.getUsers = async (req: Request, res: Response) => {
     const result = await memberService.getUsers();
     console.log("result:", result);
 
-    res.render("users", {users: result});
+    res.render("users", { users: result });
   } catch (err) {
     console.log("Error, getUsers:", err);
     res.redirect("/admin/login");
@@ -126,7 +120,7 @@ shopController.updateChosenUser = async (req: Request, res: Response) => {
     console.log("getUpdateChosenUser");
     const result = await memberService.updateChosenUser(req.body);
 
-    res.status(HttpCode.OK).json({data: result});
+    res.status(HttpCode.OK).json({ data: result });
   } catch (err) {
     console.log("Error, getUpdateChosenUser:", err);
     if (err instanceof Errors) res.status(err.code).json(err);
@@ -134,10 +128,7 @@ shopController.updateChosenUser = async (req: Request, res: Response) => {
   }
 };
 
-shopController.checkAuthSession = async (
-  req: AdminRequest,
-  res: Response
-) => {
+shopController.checkAuthSession = async (req: AdminRequest, res: Response) => {
   try {
     console.log("checkAuthSession");
     if (req.session?.member)
