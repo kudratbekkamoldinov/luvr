@@ -37,6 +37,7 @@
                 <th scope="col">T/r</th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Product Type</th>
+                <th scope="col">Product Size</th>
                 <th scope="col">Product Price</th>
                 <th scope="col">Product Left Count</th>
                 <th scope="col">Status</th>
@@ -49,8 +50,7 @@
               <td><%= value.productName %></td>
               <td><%= value.productCollection %></td>
               <td>
-                <%= value.productCollection === 'MAKEUP' ?
-                value.productSize  : '' %>
+                <%= value.productSize %>
               </td>
               <td><%= value.productPrice %></td>
               <td><%= value.productLeftCount %></td>
@@ -114,7 +114,7 @@
               />
             </div>
             <div class="half-input">
-              <label>Product Left Counts</label>
+              <label>Product Left Count</label>
               <input
                 type="number"
                 placeholder="Counts"
