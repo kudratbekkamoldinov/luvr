@@ -26,7 +26,7 @@ router.post(
   uploader("members").single("memberImage"),
   memberController.updateMember
 );
-router.get("/member/top-users", memberController.getTopUsers);
+router.get("/member/top-users", memberController.getEvents);
 
 /** Product */
 router.get("/product/all", productController.getProducts);

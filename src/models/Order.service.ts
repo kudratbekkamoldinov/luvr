@@ -7,7 +7,6 @@ import Errors, { HttpCode, Message } from "../libs/Errors";
 import { ObjectId } from "mongoose";
 import { OrderStatus } from "../libs/enums/order.enum";
 import MemberService from "./Member.service";
-import MemberModel from "../schema/Member.model";
 
 class OrderService {
   private readonly orderModel;

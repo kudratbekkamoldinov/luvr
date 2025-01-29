@@ -28,7 +28,7 @@ class ProductService {
   public async getProducts(inquiry: ProductInquiry): Promise<Product[]> {
     console.log("inquiry:", inquiry);
 
-    const match: T = { productStatus: ProductStatus.PAUSE };
+    const match: T = { productStatus: ProductStatus.PROCESS };
     console.log("match:", match);
 
     if (inquiry.productCollection)
@@ -72,7 +72,6 @@ class ProductService {
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
     console.log("74", result);
 
-    // TODO: If authenticated users => first => view creation
 
     if (memberId) {
       // Check Existence
@@ -115,7 +114,11 @@ class ProductService {
 
   public async createNewProduct(input: ProductInput): Promise<Product> {
     try {
-      return await this.productModel.create(input);
+      console.log("input", input)
+      
+      const result = await this.productModel.create(input);
+      console.log("result", result);
+      return result;
     } catch (err) {
       console.error("Error, model:createNewProduct:", err);
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);

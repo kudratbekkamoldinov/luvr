@@ -16,9 +16,11 @@ export enum ProductStatus {
 }
 
 export enum ProductCollection {
+    PERFUME = "Perfume",
     MAKEUP = "Makeup",
     FASHION = "Fashion", 
     CREAM = "Cream",
     ESSENTIAL_OIL = "Essential Oil",
     BODY_LOTION = "Body Lotion",
+    OTHERS = "Others"
 }
